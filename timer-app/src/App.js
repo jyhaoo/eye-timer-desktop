@@ -1,15 +1,25 @@
-
+import React from 'react';
 import Background from './components/Background/Background';
+import Timer from './components/Timer/Timer';
+import Settings from './components/Settings/Settings';
 
-const App = () => {
-  return (
-    <div>
-      <Background >
-        <div style={{ position: 'absolute', color: 'white', top: 8, left: '50%', transform: 'translateX(-50%)' }} >Your text</div>
-        <h2>Hello world!</h2>
-      </Background>
-    </div>
-  )
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      time: 10
+    }
+  }
+  render() {
+    return (
+      <div>
+        <Background image='test'>
+          <Settings />
+          <Timer time='10:00' />
+        </Background>
+      </div>
+    )
+  }
 }
 
 export default App;
