@@ -6,7 +6,8 @@ var style = {
     alignItems: 'center',
     marginTop: 300,
     color: 'white',
-    fontSize: 125
+    fontSize: 125,
+    //backgroundColor: 'black',
 }
 
 class Timer extends React.Component {
