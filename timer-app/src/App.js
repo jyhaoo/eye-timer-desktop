@@ -7,15 +7,18 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      time: 10
+      time: 10,
+      finishMessage: 'Finished!',
     }
   }
   render() {
+    let time = this.state.time;
+    let finishMessage = this.state.finishMessage;
     return (
       <div>
         <Background image='test'>
           <Settings />
-          <Timer time='10:00' />
+          <Timer time={time} finishMessage={finishMessage} />
         </Background>
       </div>
     )

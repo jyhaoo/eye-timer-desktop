@@ -1,16 +1,17 @@
 import React from 'react';
-import './Settings.css'
+import './Settings.css';
+import SettingsForm from './SettingsForm';
 
 class Settings extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            isEditing: false
+            isEditing: true
         }
     }
 
     render() {
-        var isEditing = this.state;
+        var isEditing = this.state.isEditing;
         return (
             <div>
                 {!isEditing && (
@@ -18,7 +19,9 @@ class Settings extends React.Component {
                 )}
                 {isEditing && (
                     // open a new component settings form
-                    <button>Is editing</button>
+                    <div>
+                        <SettingsForm />
+                    </div>
                 )}
             </div>
         )
