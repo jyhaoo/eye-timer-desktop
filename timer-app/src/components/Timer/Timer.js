@@ -22,14 +22,12 @@ class Timer extends React.Component {
     }
 
     componentDidMount() {
-        console.log('Component did mount in timer');
         this.interval = setInterval(this.count_down, 1000)
     }
 
     count_down() {
         if (this.state.time > 0) {
             this.setState({ time: this.state.time - 1 });
-            console.log(this.state.time);
         }
     }
 

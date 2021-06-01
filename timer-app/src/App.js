@@ -8,17 +8,23 @@ class App extends React.Component {
     super();
     this.state = {
       time: 10,
-      finishMessage: 'Finished!',
+      finishMessage: 'Finished',
     }
+    this.handleTime = this.handleTime.bind(this);
   }
+
+  handleTime(newTime) {
+    this.setState({ time: newTime });
+  }
+
   render() {
     let time = this.state.time;
     let finishMessage = this.state.finishMessage;
     return (
       <div>
         <Background image='test'>
-          <Settings />
-          <Timer time={time} finishMessage={finishMessage} />
+          <Settings handleTime={this.handleTime} />
+          <Timer key={Date().toLocaleString()} time={time} finishMessage={finishMessage} />
         </Background>
       </div>
     )

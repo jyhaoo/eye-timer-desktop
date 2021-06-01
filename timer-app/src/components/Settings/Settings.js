@@ -6,8 +6,18 @@ class Settings extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            isEditing: true
+            isEditing: false
         }
+        this.editHandler = this.editHandler.bind(this);
+        this.stopEditingHandler = this.stopEditingHandler.bind(this);
+    }
+
+    editHandler() {
+        this.setState({ isEditing: true })
+    }
+
+    stopEditingHandler() {
+        this.setState({ isEditing: false })
     }
 
     render() {
@@ -15,12 +25,11 @@ class Settings extends React.Component {
         return (
             <div>
                 {!isEditing && (
-                    <button>Settings</button>
+                    <button onClick={this.editHandler}>Settings</button>
                 )}
                 {isEditing && (
-                    // open a new component settings form
                     <div>
-                        <SettingsForm />
+                        <SettingsForm handleTime={this.props.handleTime} onCancel={this.stopEditingHandler} />
                     </div>
                 )}
             </div>
@@ -29,3 +38,8 @@ class Settings extends React.Component {
 }
 
 export default Settings;
+
+/*
+                        <SettingsForm onSaveTime={this.props.handleTime} onCancel={this.stopEditingHandler} />
+<button onClick={() => this.props.handleTime(21)} >HEREIAM</button>
+*/
