@@ -1,11 +1,15 @@
-import { render } from '@testing-library/react';
 import React, { useState } from 'react';
+import Background from './components/Background';
 
 function App() {
   const [settings, setSettings] = useState()
-  const [background, setBackground] = useState('')
+  const [background, setBackground] = useState('does not exist')
 
-  return (<h2>hello world</h2>)
+  return (
+    <Background image={background}>
+    </Background>
+
+  );
 }
 
 export default App;
