@@ -1,34 +1,11 @@
-import React from 'react';
-import Background from './components/Background/Background';
-import Timer from './components/Timer/Timer';
-import Settings from './components/Settings/Settings';
+import { render } from '@testing-library/react';
+import React, { useState } from 'react';
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      time: 10,
-      finishMessage: 'Finished',
-    }
-    this.handleTime = this.handleTime.bind(this);
-  }
+function App() {
+  const [settings, setSettings] = useState()
+  const [background, setBackground] = useState('')
 
-  handleTime(newTime) {
-    this.setState({ time: newTime });
-  }
-
-  render() {
-    let time = this.state.time;
-    let finishMessage = this.state.finishMessage;
-    return (
-      <div>
-        <Background image='test'>
-          <Settings handleTime={this.handleTime} />
-          <Timer key={Date().toLocaleString()} time={time} finishMessage={finishMessage} />
-        </Background>
-      </div>
-    )
-  }
+  return (<h2>hello world</h2>)
 }
 
 export default App;
