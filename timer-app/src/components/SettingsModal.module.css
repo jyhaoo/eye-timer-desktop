@@ -1,0 +1,69 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.75);
+}
+.modal {
+    position: fixed;
+    top: 20vh;
+    left: 10%;
+    width: 80%;
+    z-index: 100;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 10px;
+}
+.settingsContainer {
+    padding-bottom: 5px;
+}
+.settingsText {
+    text-align: center;
+    font-size: 40px;
+}
+.timeContainer {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+}
+.timeText {
+    font-size: 25px;
+}
+.backgroundContainer {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+}
+.backgroundText {
+    font-size: 25px;
+}
+.menu {
+    width: 130px;
+    height: 40px;
+}
+.input {
+    width: 90px;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid black;
+}
+.buttonContainer {
+    padding-top: 10px;
+    text-align: center;
+    padding-bottom: 15px;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+}
