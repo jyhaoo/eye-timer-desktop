@@ -25,18 +25,9 @@
     text-align: center;
     font-size: 40px;
 }
-.timeContainer {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 30px;
-}
-.timeText {
-    font-size: 25px;
-}
 .backgroundContainer {
-    padding-top: 15px;
     padding-bottom: 15px;
-    padding-left: 30px;
+    padding-left: 40%;
 }
 .backgroundText {
     font-size: 25px;
@@ -53,15 +44,17 @@
 }
 .buttonContainer {
     padding-top: 10px;
-    text-align: center;
     padding-bottom: 15px;
+    text-align: center;
 }
 .button {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
-    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    align-content: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;

@@ -2,21 +2,20 @@ import React, { useState } from 'react';
 import classes from './SettingsModal.module.css';
 
 const SettingsModal = (props) => {
-    const [enteredTime, setTimer] = useState('');
-    const [enteredBackground, setBackground] = useState('');
-
-    const timeChangeHandler = (event) => {
-        setTimer(event.target.value);
-    }
+    const [enteredBackground, setBackground] = useState('default');
+    const [enteredTimerType, setTimerType] = useState('');
 
     const backgroundChangeHandler = (event) => {
         setBackground(event.target.value);
     }
 
+    const timeTypeHandler = (event) => {
+        setTimerType(event.target.value);
+    }
+
     const addSettings = (event) => {
         event.preventDefault();
-        console.log('Event: ' + enteredTime);
-        console.log('Background: ' + enteredBackground);
+        props.onAddSettings(enteredTimerType, enteredBackground);
     }
 
     return (
@@ -28,10 +27,6 @@ const SettingsModal = (props) => {
                 </div>
                 <form onSubmit={addSettings}>
                     <div>
-                        <div className={classes.timeContainer}>
-                            <label className={classes.timeText} htmlFor='time'>Time  </label>
-                            <input className={classes.input} id='time' type='text' value={enteredTime} onChange={timeChangeHandler} />
-                        </div>
                         <div className={classes.backgroundContainer}>
                             <label className={classes.backgroundText}>Backgrounds  </label>
                             <select className={classes.menu} id='background' onChange={backgroundChangeHandler}>
@@ -42,7 +37,9 @@ const SettingsModal = (props) => {
                         </div>
                     </div>
                     <div className={classes.buttonContainer}>
-                        <button className={classes.button} type='submit'>Submit</button>
+                        <button className={classes.button} type='submit' value='1hour' onClick={timeTypeHandler}>1 Hour</button>
+                        <button className={classes.button} type='submit' value='45min' onClick={timeTypeHandler}>45 minutes</button>
+                        <button className={classes.button} type='submit' onClick={timeTypeHandler} value='clock'>Clock</button>
                     </div>
                 </form>
             </div>

@@ -6,12 +6,14 @@ import Time from './components/Time';
 function App() {
   const [settings, setSettings] = useState(true)
   const [background, setBackground] = useState('default')
+  const [timerType, setTimerType] = useState('')
 
   const settingsHandler = () => {
     setSettings(null);
   }
 
-  const addSettings = (settingsBackground) => {
+  const addSettings = (timerValue, settingsBackground) => {
+    setTimerType(timerValue);
     setBackground(settingsBackground);
   }
 
@@ -21,7 +23,7 @@ function App() {
         {settings &&
           (<SettingsModal onAddSettings={addSettings} onConfirm={settingsHandler} />)
         }
-        <Time time={50} />
+        <Time time={timerType} />
       </Background>
     </div>
   );
