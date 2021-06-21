@@ -16,12 +16,18 @@ function App() {
     setSettings(null);
   }
 
+  const openSettings = () => {
+    setSettings(true);
+  }
+
   const addSettings = (timerValue, settingsBackground) => {
     setSettings(false);
     if (timerValue === 'clock') {
       setClock(true)
+    } else {
+      setTimer(true)
+      setTimerType((timerValue === '1hour') ? 3600 : 2700);
     }
-    setTimerType(timerValue);
     setBackground(settingsBackground);
   }
 
@@ -31,7 +37,7 @@ function App() {
         {settings &&
           (<SettingsModal onAddSettings={addSettings} onConfirm={settingsHandler} />)
         }
-        {timer && <Time time={timerType} />}
+        {timer && <Time time={timerType} openSettings={openSettings} />}
         {clock && <Clock />}
       </Background>
     </div>

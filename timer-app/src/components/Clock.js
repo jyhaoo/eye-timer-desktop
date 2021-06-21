@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import classes from './Clock.module.css';
+import classes from './Time.module.css';
 
 const Clock = (props) => {
 
     const [date, setDate] = useState(new Date())
 
     useEffect(() => {
-        var timerID = setInterval(() => tick(), 1000);
+        var time = setInterval(() => tick(), 1000);
         return function cleanup() {
-            clearInterval(timerID);
+            clearInterval(time);
         };
     });
 
     function tick() {
         setDate(new Date());
     }
+
     return (
         <div>
             <p className={classes.clockText}>{date.toLocaleTimeString()}</p>
