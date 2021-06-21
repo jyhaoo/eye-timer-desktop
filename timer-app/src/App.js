@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import Background from './components/Background';
 import SettingsModal from './components/SettingsModal';
 import Time from './components/Time';
+import Clock from './components/Clock';
 
 function App() {
   const [settings, setSettings] = useState(true)
+  const [timer, setTimer] = useState(false)
+  const [clock, setClock] = useState(false)
+
   const [background, setBackground] = useState('default')
   const [timerType, setTimerType] = useState('')
 
@@ -13,6 +17,10 @@ function App() {
   }
 
   const addSettings = (timerValue, settingsBackground) => {
+    setSettings(false);
+    if (timerValue === 'clock') {
+      setClock(true)
+    }
     setTimerType(timerValue);
     setBackground(settingsBackground);
   }
@@ -23,7 +31,8 @@ function App() {
         {settings &&
           (<SettingsModal onAddSettings={addSettings} onConfirm={settingsHandler} />)
         }
-        <Time time={timerType} />
+        {timer && <Time time={timerType} />}
+        {clock && <Clock />}
       </Background>
     </div>
   );

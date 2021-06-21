@@ -10,8 +10,6 @@ const Time = (props) => {
             setTime(3600);
         } else if (props.time === '45min') {
             setTime(2700);
-        } else {
-            //set up clock
         }
     })
 
